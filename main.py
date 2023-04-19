@@ -3,14 +3,14 @@ from bs4 import BeautifulSoup
 from tabulate import tabulate
 import re
 
-
+#webcrawler challenge
 def getwordscount(wordlimit=10,avoidlist = {}) -> None:
 
     regex = re.compile(r'<[^>]+>')
 
     def remove_html(string):
         return regex.sub('', string)
-
+# look only in the history portion
     content = requests.get('https://en.wikipedia.org/wiki/Microsoft#History')
 
     histcontent1 = content.text.split(
